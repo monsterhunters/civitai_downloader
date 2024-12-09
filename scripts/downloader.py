@@ -4,7 +4,7 @@ from scripts.mod.ari import install_aria2, check_aria2_installed
 from huggingface_hub import login
 
 
-api_key = "420b01efe97b0362c63207514db281f4"
+api_key = "efc79c7d87f745a9622f6de024035add"
 
 
 # Ensure aria2 is installed
