@@ -56,7 +56,7 @@ def get_output_folder(link_type, custom_folder):
         "Embedding": "embeddings",
         "vae": "models/VAE",
     }
-    return custom_folder if custom_folder.strip() else folders.get(link_type, "default_folder")
+    return custom_folder if custom_folder.strip() else folders.get(link_type, "models/Stable-diffusion")
 
 # Gradio interface
 import gradio as gr
