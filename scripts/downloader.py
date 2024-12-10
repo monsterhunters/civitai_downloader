@@ -4,7 +4,7 @@ from scripts.mod.ari import install_aria2, check_aria2_installed
 from huggingface_hub import login
 
 
-api_key = "efc79c7d87f745a9622f6de024035add"
+api_key = "420b01efe97b0362c63207514db281f4"
 
 
 # Ensure aria2 is installed
@@ -54,9 +54,11 @@ def get_output_folder(link_type, custom_folder):
         "Checkpoints": "models/Stable-diffusion",
         "Lora": "models/Lora",
         "Embedding": "embeddings",
-        "vae": "models/VAE",
+        "Vae": "models/VAE",
+        "Upscale": "models/RealESRGAN",
+        "Control Net": "models/RealESRGAN"
     }
-    return custom_folder if custom_folder.strip() else folders.get(link_type, "models/Stable-diffusion")
+    return custom_folder if custom_folder.strip() else folders.get(link_type, "default_folder")
 
 # Gradio interface
 import gradio as gr
@@ -93,7 +95,7 @@ def on_ui_tabs():
         with gr.Row():
             with gr.Column():
                 link_type = gr.Radio(
-                    ["Checkpoints", "Lora", "Embedding", "vae"],
+                    ["Checkpoints", "Lora", "Embedding", "Vae", "Upscale", "Control Net"],
                     label="Select Folder Type"
                 )
                 custom_folder = gr.Textbox(
