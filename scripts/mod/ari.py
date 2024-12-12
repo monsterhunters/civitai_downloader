@@ -29,7 +29,8 @@ def install_aria2():
     if os_name == "Windows":
         print("Installing aria2 on Windows...")
         try:
-            subprocess.run(["winget", "install", "--id", "aria2.aria2", "-e"], check=True)
+            #subprocess.run(["winget", "install", "--id", "aria2.aria2", "-e"], check=True)
+            subprocess.run(["winget", "install", "aria2"], check=True)
         except subprocess.CalledProcessError as e:
             print(f"Error installing aria2: {e}")
     elif os_name == "Linux":
